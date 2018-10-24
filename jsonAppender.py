@@ -21,11 +21,11 @@ def cat_json(output_filename, input_filenames):
         outfile.write(']')
 
 def mangle(s):
-    return s.strip()[1:-1] #start:end possibly need to change
+    return s.strip()
 
 def main():
     #create new file name 'annotations_group.json' to append the file data
-    output_file = open('annotations_group.json', 'w+')
+    output_file = open('annotations_group.json', 'a+')
     mypath = os.getcwd()
     input_files = [f for f in os.listdir(mypath) if isfile(join(mypath, f))]
     cat_json('annotations_group.json', input_files)
